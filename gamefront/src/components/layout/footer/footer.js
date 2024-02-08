@@ -1,7 +1,6 @@
 import styles from './footer.module.scss';
 
 export default function Footer() {
-  console.log(styles);
   return (
     <div className={styles.footer}>
       <div className={styles.containerTabs}>
