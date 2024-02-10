@@ -13,6 +13,14 @@ public class Game {
     private List<String> images;
     private String description;
     
+	public Game(int id, String name, List<String> images, String description) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.images = images;
+		this.description = description;
+	}
+	
 	public int getId() {
 		return id;
 	}
