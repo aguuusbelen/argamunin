@@ -1,6 +1,5 @@
 package argamunin.com.backend.entitys;
 
-import java.awt.Image;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -11,7 +10,7 @@ public class Game {
 	@Id
     private int id;
     private String name;
-    private List<Image> images;
+    private List<String> images;
     private String description;
     
 	public int getId() {
@@ -26,10 +25,10 @@ public class Game {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Image> getImages() {
+	public List<String> getImages() {
 		return images;
 	}
-	public void setImages(List<Image> images) {
+	public void setImages(List<String> images) {
 		this.images = images;
 	}
 	public String getDescription() {
