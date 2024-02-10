@@ -6,4 +6,6 @@ Proyecto de página web para empresa de juegos
 
 Frontend: React
 
-Backend: Java
+Backend: Java (Eclipse)
+
+Para levantar el proyecto JAVA, hay que instalar maven y ejecutar desde eclipse con run "Spring boot aplication".
