@@ -4,7 +4,6 @@ import org.bson.Document;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.lang.NonNull;
@@ -21,11 +20,8 @@ import com.mongodb.client.MongoDatabase;
 import argamunin.com.backend.service.GameService;
 
 @Configuration
-@Import(GameService.class)
 public class AppConfig {
-	 
-	/*
-	 */
+	
 	@Bean
 	MongoClient mongoClient() {
 		String connectionString = "mongodb+srv://argamunin:rCD573GNOysZxpEY@argamunin.eieratd.mongodb.net/?retryWrites=true&w=majority";
@@ -54,14 +50,14 @@ public class AppConfig {
 	MongoOperations mongoTemplate(@NonNull MongoClient mongoClient) {
 		return new MongoTemplate(mongoClient, "geospatial");
 	}
-	  
+
     @Bean
-    public GameService gameBean() {
+    GameService gameBean() {
         return new GameService();
     }
  
     @Bean
-    public ModelMapper modelMapperBean() {
+    ModelMapper modelMapperBean() {
         return new ModelMapper();
     }
 }
