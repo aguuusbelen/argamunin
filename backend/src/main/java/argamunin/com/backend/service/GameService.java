@@ -1,36 +1,37 @@
 package argamunin.com.backend.service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
-import argamunin.com.backend.responses.GameResponse;
-
-
+import argamunin.com.backend.entitys.Game;
+import argamunin.com.backend.repositories.GameRepository;
 
 @Service
 public class GameService {
 
-	/*
     @Autowired
-    private EmployeeRepo employeeRepo;
- 	*/
-	
+    private GameRepository gameRepository;
+
     @Autowired
-    private ModelMapper mapper;
+    private SequenceGeneratorService sequenceGenerator;
     
-    public List<GameResponse> getGames() {
-        // Optional<Game> employee = employeeRepo.findById(id);
-        // GameResponse employeeResponse = mapper.map(employee, EmployeeResponse.class);
-    	List<GameResponse> gameResponses = new ArrayList<>();
-    	GameResponse game01 = new GameResponse(0, "Crazy Space Ships");
-    	GameResponse game02 = new GameResponse(0, "Infinite Puzzle");
-    	gameResponses.add(game01);
-    	gameResponses.add(game02);
-        return gameResponses;
+    public List<Game> getAllGames() {
+        return gameRepository.findAll();
+    }
+
+    public Game getGameById(@NonNull Integer id) {
+        return gameRepository.findById(id).orElse(null);
+    }
+
+    public Game createGame(@NonNull Game game) {
+    	game.setId(sequenceGenerator.generateSequence(Game.SEQUENCE_NAME));
+        return gameRepository.save(game);
+    }
+
+    public void deleteGameById(@NonNull Integer id) {
+    	gameRepository.deleteById(id);
     }
 }
