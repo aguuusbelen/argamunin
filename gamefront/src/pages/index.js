@@ -11,8 +11,19 @@ export default function Index() {
     console.log(gamesResponse);
   }
 
+  async function createGame() {
+    const game = {
+      name: 'Puzzle Infinite',
+      images: ['url1', 'irl2'],
+      description: 'description del juego puzzle',
+    };
+    const response = await GameService.CreateGame(game);
+    console.log(response);
+  }
+
   useEffect(() => {
-    getGames();
+    // getGames();
+    createGame();
   }, []);
 
   return <div>This is index and hust has more text</div>;

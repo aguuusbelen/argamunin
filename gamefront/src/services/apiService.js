@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
 class ApiService {
-  static getRequestOptions(method, dataBody) {
+  static getRequestOptions(method, data) {
     return {
-      method: 'GET',
+      method: `${method}`,
       headers: { 'Content-Type': 'application/json' },
-      body: dataBody && JSON.stringify(dataBody),
+      body: data && JSON.stringify(data),
     };
   }
 
@@ -28,32 +28,26 @@ class ApiService {
     return data;
   }
 
-  /*
-    const requestOptions = {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    };
-    */
   static async get(url) {
     const requestOptions = this.getRequestOptions('GET');
     const response = await this.handleRequest(url, requestOptions);
     return response;
   }
 
-  static async post(url, dataBody) {
-    const requestOptions = this.getRequestOptions('POST', dataBody);
+  static async post(url, data) {
+    const requestOptions = this.getRequestOptions('POST', data);
     const response = await this.handleRequest(url, requestOptions);
     return response;
   }
 
-  static async put(url, dataBody) {
-    const requestOptions = this.getRequestOptions('PUT', dataBody);
+  static async put(url, data) {
+    const requestOptions = this.getRequestOptions('PUT', data);
     const response = await this.handleRequest(url, requestOptions);
     return response;
   }
 
-  static async delete(url, dataBody) {
-    const requestOptions = this.getRequestOptions('DELETE', dataBody);
+  static async delete(url, data) {
+    const requestOptions = this.getRequestOptions('DELETE', data);
     const response = await this.handleRequest(url, requestOptions);
     return response;
   }

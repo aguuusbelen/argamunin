@@ -14,7 +14,7 @@ class GameService {
   }
 
   static async CreateGame(dataBody) {
-    const url = `/creategame`;
+    const url = '/creategame';
     const response = await ApiService.post(url, dataBody);
     return response;
   }
