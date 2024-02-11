@@ -22,24 +22,42 @@
   margin-right: 2.5%;
 }
 
-.playgame {
+.sectionGame {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 2.5%;
-  margin: 2.5%;
+  margin-top: 2%;
+  justify-content: space-between;
 }
+
 .containerCarousel {
-  margin-top: 20px;
   margin-left: 2.5%;
-  margin-bottom: 20px;
-  width: 45%;
+  width: 50%;
+}
+
+.containerDescription {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2.5%;
+  width: 50%;
+}
+
+.sectionButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5%;
+  margin-top: 5%;
+  justify-content: space-between;
 }
 
 .text {
   text-align: justify;
-  size: 26px;
-  margin-right: 2.5%;
+}
+
+.formalText {
+  font-family: sans-serif;
 }
 
 .buttonTab {
@@ -52,4 +70,13 @@
   cursor: pointer;
   font-size: large;
   box-shadow: 50px;
+}
+
+.sectionProject {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5%;
+  margin: 2.5%;
+  justify-content: space-between;
 }
