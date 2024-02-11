@@ -15,6 +15,9 @@ public class GameService {
     @Autowired
     private GameRepository gameRepository;
 
+    @Autowired
+    private SequenceGeneratorService sequenceGenerator;
+    
     public List<Game> getAllGames() {
         return gameRepository.findAll();
     }
@@ -24,6 +27,7 @@ public class GameService {
     }
 
     public Game createGame(@NonNull Game game) {
+    	game.setId(sequenceGenerator.generateSequence(Game.SEQUENCE_NAME));
         return gameRepository.save(game);
     }
 

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import argamunin.com.backend.entitys.Game;
@@ -36,8 +37,8 @@ public class GameController {
         return ResponseEntity.status(HttpStatus.OK).body(games);
     }
     
-    @PostMapping("/creategame")
-    private ResponseEntity<Game> createGame(@NonNull Game game) {
+    @PostMapping(value = "/creategame", consumes = "application/json", produces = "application/json")
+    private ResponseEntity<Game> createGame(@RequestBody Game game) {
     	Game games = gameService.createGame(game);
         return ResponseEntity.status(HttpStatus.OK).body(games);
     }

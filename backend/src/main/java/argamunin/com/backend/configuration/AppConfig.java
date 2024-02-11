@@ -55,7 +55,7 @@ public class AppConfig {
     GameService gameBean() {
         return new GameService();
     }
- 
+
     @Bean
     ModelMapper modelMapperBean() {
         return new ModelMapper();

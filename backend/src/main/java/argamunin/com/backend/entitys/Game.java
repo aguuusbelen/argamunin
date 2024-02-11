@@ -3,28 +3,31 @@ package argamunin.com.backend.entitys;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "games")
 public class Game {
+    @Transient
+    public static final String SEQUENCE_NAME = "games_sequence";
+    
 	@Id
-    private int id;
+    private Long id;
     private String name;
     private List<String> images;
     private String description;
     
-	public Game(int id, String name, List<String> images, String description) {
+	public Game(String name, List<String> images, String description) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.images = images;
 		this.description = description;
 	}
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getName() {
