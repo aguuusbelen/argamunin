@@ -8,6 +8,7 @@ export default function Index() {
     const gamesResponse = await GameService.GetGames();
     setGames(gamesResponse);
     console.log(games);
+    console.log(gamesResponse);
   }
 
   useEffect(() => {
