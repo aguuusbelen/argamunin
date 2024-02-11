@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import GameService from '../services/GameService';
 
@@ -23,7 +24,7 @@ export default function Index() {
 
   useEffect(() => {
     // getGames();
-    createGame();
+    // createGame();
   }, []);
 
   return <div>This is index and hust has more text</div>;
