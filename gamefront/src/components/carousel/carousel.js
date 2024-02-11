@@ -6,7 +6,7 @@ import CarouselItem from './carouselItem/carouselItem';
 
 const CarouselComponent = ({ images }) => {
   return (
-    <div>
+    <div style={{ paddingTop: '40px' }}>
       <Carousel>
         {images ? (
           images.map((image) => {
