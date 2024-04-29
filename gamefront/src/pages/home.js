@@ -22,7 +22,10 @@ export default function Home() {
   return (
     <div>
       <div className={styles.container}>
-        <p className={styles.h1}> ARGAMUNIN </p>
+        <div className={styles.marca}>
+          <img src={'/logo1.png'} className={styles.logo} />
+        </div>
+
         <div className={styles.linea} />
         <div className={styles.sectionGame}>
           <div className={styles.containerCarousel}>

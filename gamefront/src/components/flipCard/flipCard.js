@@ -3,14 +3,19 @@ import React, { useState } from 'react';
 const FlipCard = ({ frontContent, backContent }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleClick = () => {
-    setIsFlipped(!isFlipped);
+  const handleMouseEnter = () => {
+    setIsFlipped(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsFlipped(false);
   };
 
   return (
     <div
       className={`flip-card ${isFlipped ? 'flipped' : ''}`}
-      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="flip-card-inner">
         <div className="flip-card-front">
