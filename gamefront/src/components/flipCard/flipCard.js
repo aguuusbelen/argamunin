@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const FlipCard = ({ frontContent, backContent }) => {
   const [isFlipped, setIsFlipped] = useState(false);
