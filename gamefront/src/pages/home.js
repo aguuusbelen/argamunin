@@ -6,7 +6,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 const gamesAvailables = [
   {
     id: 1,
-    name: 'Crazy Space Ship',
+    name: 'Crazy Space Ships',
     images: [
       '/img1.PNG',
       '/img2.PNG',
